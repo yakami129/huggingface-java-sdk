@@ -8,7 +8,7 @@ apply plugin: 'signing'
 
 description = "huggingface-VITS-SDK"
 group 'io.github.yakami129'
-version = '1.0.3-SNAPSHOT'
+version = '1.0.0-RELEASES'
 sourceCompatibility = '11'
 
 repositories {
