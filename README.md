@@ -1,7 +1,6 @@
 # huggingface-java-sdk
 
-这是一个huggingface语音模型的sdk，可以调用huggingface上的API获取语音文件
-
+这是一个 [huggingface](https://huggingface.co/) 语音模型的sdk，可以调用huggingface上的API获取语音文件
 
 ### 如何引入
 
@@ -23,15 +22,17 @@
 ### 如何使用
 
 ```
-   // 参数详情请查阅：https://huggingface.co/docs/api-inference/index
+ 
    final HuggingFaceClient huggingFaceClient = HuggingFaceClient.builder()
-                .huggingToken("Bearer XXXXXXXXXXXXX")
-                .context("今日、私は遊びに行きたい")
-                .directoryFile(FileUtil.file("tmp"))
-                .modelId("mio/amadeus")
+                .huggingToken("Bearer XXXXXXXXXXXXX") // Token 需要在 huggingface 注册账号和申请
+                .context("今日、私は遊びに行きたい")      // 需要转换为语音的文本信息
+                .directoryFile(FileUtil.file("tmp"))  // 语音存储的路径
+                .modelId("mio/amadeus")               // huggingface的语音模型id
                 .build();
    final String fileName = huggingFaceClient.generateAudioFlac().getName();
 ```
+
+> 参数详情请查阅：https://huggingface.co/docs/api-inference/index
 
 ### 作者留言
 
